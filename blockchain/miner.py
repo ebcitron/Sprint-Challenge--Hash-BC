@@ -32,6 +32,7 @@ def proof_of_work(last_proof):
     return proof
 
 
+
 def valid_proof(last_hash, proof):
     """
     Validates the Proof:  Multi-ouroborus:  Do the last six characters of
@@ -47,7 +48,7 @@ def valid_proof(last_hash, proof):
     new_hash = hashlib.sha256(f'{proof}'.encode()).hexdigest()
 
 
-    print(f"Last:  {last_hash} | New:  {new_hash}")
+    print(f"Last:  {last_hash} | New:  {new_hash} | Proof: {proof}")
 
     return last_hash[-6:] == new_hash[:6]
 
